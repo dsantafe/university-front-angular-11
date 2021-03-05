@@ -1,0 +1,47 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/student-list']">Students</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a [routerLink]="[ '/student-create' ]">New</a>
+            </li>
+        </ol>
+    </nav>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>LastName</td>
+                    <td>FirstMidName</td>
+                    <td>EnrollmentDate</td>
+                    <td>FullName</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{ student.ID }}</td>
+                    <td>{{ student.LastName }}</td>
+                    <td>{{ student.FirstMidName }}</td>
+                    <td>{{ student.EnrollmentDate }}</td>
+                    <td>{{ student.FullName }}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-sm btn-outline-black"
+                                [routerLink]="[ '/student-detail', student.ID ]">Details</a>
+                            <a class="btn btn-sm btn-outline-warning"
+                                [routerLink]="[ '/student-edit', student.ID ]">Edit</a>
+                            <a class="btn btn-sm btn-outline-danger"
+                                [routerLink]="[ '/student-delete', student.ID ]">Delete</a>
+                            <a class="btn btn-sm btn-outline-info"
+                                [routerLink]="[ '/student-courses-list', student.ID ]">Courses</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

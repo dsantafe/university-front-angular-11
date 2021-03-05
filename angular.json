@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "university"
+  "defaultProject": "university",
+  "cli": {
+    "analytics": "df919fdf-f933-46e7-8016-53ef106e22d0"
+  }
 }

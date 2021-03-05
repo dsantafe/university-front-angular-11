@@ -1,0 +1,40 @@
+<div class="container">
+  <br />
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/course-list']">Courses</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Create</li>
+    </ol>
+  </nav>
+
+  <h2>Create Course</h2>
+  <hr>
+
+  <form #courseForm="ngForm">
+
+    <div class="form-row">
+      <div class="col-md-4 form-floating">
+        <input type="text" id="courseID" name="courseID" placeholder="Enther the course ID" class="form-control"
+          #courseID [(ngModel)]="course.CourseID" autocomplete="off" />
+        <label for="courseID">ID:</label>
+      </div>
+      <div class="col-md-4 form-floating">
+        <input type="text" id="title" name="title" placeholder="Enther the title" class="form-control" #title
+          [(ngModel)]="course.Title" autocomplete="off" />
+        <label for="title">Title:</label>
+      </div>
+      <div class="col-md-4 form-floating">
+        <input type="text" id="credits" name="credits" placeholder="Enther the credits" class="form-control" #credits
+          [(ngModel)]="course.Credits" autocomplete="off" />
+        <label for="credits">Credits:</label>
+      </div>
+    </div>
+
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-outline-primary btn-sm" (click)="save()">Save</button>
+      <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+    </div>
+  </form>
+
+</div>
